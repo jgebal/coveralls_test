@@ -6,5 +6,5 @@ service_pull_request=$TRAVIS_PULL_REQUEST
 service_branch=$TRAVIS_BRANCH
 
 #https://coveralls.io/api/v1/jobs
-curl -vX POST https://coveralls.io/api/v1/jobs -d @coverage.json \
---header "Content-Type: application/json"
+curl -v -X POST https://coveralls.io/api/v1/jobs -H "Content-Type: application/json" -d @"coverage.json"
+
