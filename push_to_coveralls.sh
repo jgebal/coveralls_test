@@ -13,7 +13,6 @@ echo '$TRAVIS_JOB_ID'=$TRAVIS_JOB_ID
 #sed -i -- "s/\"source_files\":/\"service_job_id\":\"$TRAVIS_JOB_ID\",\"service_name\":\"travis-ci\", \"source_files\":/g" coverage.json
 sed -i -- "s/\"source_files\":/\"repo_token\":\"$COVERALLS_REPO_TOKEN\",\"service_job_id\":\"$TRAVIS_JOB_ID\",\"service_name\":\"travis-ci\", \"source_files\":/g" coverage.json
 
-cat coverage.json
 #https://coveralls.io/api/v1/jobs
 curl -v -X POST https://coveralls.io/api/v1/jobs -d @"coverage.json" \
 -H "Content-Type: application/json"
