@@ -2,5 +2,5 @@ sudo: required
 language: python
 
 script:
-  - bash .push_to_coveralls.sh
+  - bash push_to_coveralls.sh
 
