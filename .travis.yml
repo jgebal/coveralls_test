@@ -3,3 +3,14 @@ language: python
 script:
   - bash push_to_coveralls.sh
 
+deploy:
+  provider: releases
+  api_key: ${TRAVIS_TEST_RELEASE}
+  file: 
+    - push_to_coveralls.sh
+    - 0.0.1-test.tar.gz
+    - 0.0.1-test.zip
+  overwrite: true
+  skip_cleanup: true
+  on:
+    tags: true
