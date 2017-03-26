@@ -1,7 +1,7 @@
 language: python
 
 script:
-  - test $TRAVIS_JOB_NUMBER =~ \.1$ && BUILD_RELEASE=true || true
+  - test [ "${TRAVIS_JOB_NUMBER}" =~ \.1$ ] && BUILD_RELEASE="TRUE" || true
   - test -n $BUILD_RELEASE && bash push_to_coveralls.sh
 
 deploy:
