@@ -1,8 +1,8 @@
 language: python
 
 script:
-  - test [ "${TRAVIS_JOB_NUMBER}" =~ \.1$ ] && BUILD_RELEASE="TRUE" || true
-  - test -n $BUILD_RELEASE && bash push_to_coveralls.sh
+  - if [[ "${TRAVIS_JOB_NUMBER}" =~ \.1$ ]]; then BUILD_RELEASE="TRUE"; fi
+  - test -z ${BUILD_RELEASE+x} && bash push_to_coveralls.sh
 
 deploy:
   provider: releases
