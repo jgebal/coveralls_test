@@ -6,6 +6,7 @@
 #service_branch=$TRAVIS_BRANCH
 
 echo '$TRAVIS_JOB_ID'=$TRAVIS_JOB_ID
+echo '$TRAVIS_JOB_NUMBER'=$TRAVIS_JOB_NUMBER
 
 #sed -i -- "s/\"name\":/\"source_digest\":\"3abb17b66815bc7946cefe727737d295\",\"name\":/g" coverage.json
 #sed -i -- "s/\"name\":/\"source\":\"\",\"name\":/g" coverage.json
