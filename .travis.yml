@@ -2,7 +2,7 @@ language: python
 
 script:
   - if [[ "${TRAVIS_JOB_NUMBER}" =~ \.1$ ]]; then IS_BUILD_RELEASE_JOB=true; fi
-  - if [ -z ${IS_BUILD_RELEASE_JOB+x}]; then bash push_to_coveralls.sh; fi
+  - if [ -z ${IS_BUILD_RELEASE_JOB+x} ]; then bash push_to_coveralls.sh; fi
 
 deploy:
   provider: releases
